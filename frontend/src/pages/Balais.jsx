@@ -1,8 +1,9 @@
+// Balais.jsx
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Container, Typography, Button } from "@mui/material";
 import EmailForm from "../components/EmailForm";
-
+import dashboardStyles from "../styles/dashboardStyles";
 
 const Balais = () => {
   const navigate = useNavigate();
@@ -26,12 +27,15 @@ const Balais = () => {
   }, [navigate]);
 
   return (
-    <Container>
-      <Typography variant="h4">
-        Welcome {userRole} {user}
+    <Container style={dashboardStyles.container} disableGutters>
+      {/* The `welcomeText` might also need to stretch, apply its style */}
+      <Typography variant="h4" style={dashboardStyles.welcomeText}>
+        Welcome {user}
       </Typography>
 
-      <EmailForm sender="balais" />
+      <div style={dashboardStyles.emailFormContainer}>
+        <EmailForm sender="balais" />
+      </div>
 
       <Button
         variant="contained"
@@ -40,6 +44,7 @@ const Balais = () => {
           localStorage.clear();
           navigate("/login");
         }}
+        style={dashboardStyles.logoutButton}
       >
         Logout
       </Button>
@@ -48,4 +53,3 @@ const Balais = () => {
 };
 
 export default Balais;
-
