@@ -1,5 +1,3 @@
-// src/styles/dashboardStyles.js
-
 const dashboardStyles = {
   container: {
     display: "flex",
@@ -20,21 +18,17 @@ const dashboardStyles = {
     fontWeight: "bold",
     textAlign: "center",
     fontSize: "2.5rem",
-    width: "calc(100% - 40px)", // Still allows some responsiveness for the text
-    maxWidth: "900px", // Max width for the welcome text for readability
+    width: "calc(100% - 40px)", 
+    maxWidth: "900px", 
     padding: "0 20px",
     boxSizing: "border-box",
   },
   emailFormContainer: {
-    // ADJUSTMENTS HERE FOR THE CONTAINER OF THE FORM (THE WHITE BOX)
-    width: "calc(100% - 40px)", // Ensures it has 20px padding on each side, relative to its parent
-    maxWidth: "500px", // A good, balanced max-width for the form container itself
-    // Feel free to adjust this value:
-    // For a slightly smaller box: maxWidth: "450px",
-    // For a slightly larger box: maxWidth: "550px",
+    width: "calc(100% - 40px)", 
+    maxWidth: "500px", 
 
     marginBottom: "30px",
-    padding: "30px", // Internal padding for the actual form content
+    padding: "30px", 
     backgroundColor: "#fff",
     borderRadius: "10px",
     boxShadow: "0 4px 15px rgba(0, 0, 0, 0.1)",

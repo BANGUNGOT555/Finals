@@ -3,27 +3,25 @@ import axios from "axios";
 import { TextField, Button, Container, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
-// Define local styles for Login component, mirroring the dashboard theme
 const loginStyles = {
   container: {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
-    minHeight: "100vh", // Take full viewport height
+    minHeight: "100vh", 
     padding: "20px",
-    backgroundColor: "#f0f2f5", // Light grey background from dashboard theme
+    backgroundColor: "#f0f2f5", 
     fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
-    boxSizing: "border-box", // Include padding in width calculation
+    boxSizing: "border-box", 
   },
   loginBox: {
-    // This will mimic the 'emailFormContainer' from dashboardStyles
     width: "100%",
-    maxWidth: "450px", // A good "normal" width for a login form
-    padding: "40px 30px", // Increased padding for a better feel
-    backgroundColor: "#fff", // White background for the form box
+    maxWidth: "450px", 
+    padding: "40px 30px", 
+    backgroundColor: "#fff", 
     borderRadius: "10px",
-    boxShadow: "0 4px 15px rgba(0, 0, 0, 0.1)", // Soft shadow
+    boxShadow: "0 4px 15px rgba(0, 0, 0, 0.1)", 
     boxSizing: "border-box",
     display: "flex",
     flexDirection: "column",
@@ -31,49 +29,48 @@ const loginStyles = {
   },
   heading: {
     marginBottom: "30px",
-    color: "#333", // Dark color for text
+    color: "#333", 
     fontWeight: "bold",
     textAlign: "center",
-    fontSize: "2.2rem", // Slightly smaller than welcomeText but still prominent
+    fontSize: "2.2rem", 
   },
   textField: {
-    // MUI TextField props make this less direct, but we'll use consistent fonts/colors
-    marginBottom: "20px", // Spacing between fields
-    '& label.Mui-focused': { // Style for label when input is focused
-      color: '#28a745', // Primary color for focused label
+    marginBottom: "20px", 
+    '& label.Mui-focused': { 
+      color: '#28a745', 
     },
     '& .MuiOutlinedInput-root': {
       '& fieldset': {
-        borderColor: '#ccc', // Default border color
+        borderColor: '#ccc', 
       },
       '&:hover fieldset': {
-        borderColor: '#999', // Hover border color
+        borderColor: '#999', 
       },
       '&.Mui-focused fieldset': {
-        borderColor: '#28a745', // Focused border color (primary theme color)
+        borderColor: '#28a745', 
       },
-      'input': { // Style for the input text itself
-        color: '#333', // Dark text color
+      'input': { 
+        color: '#333', 
         fontSize: '16px',
-        padding: '12px 15px', // Adjust padding if needed
+        padding: '12px 15px', 
       }
     },
-    'textarea': { // For multiline textfields if used
+    'textarea': { 
       color: '#333',
       fontSize: '16px',
     }
   },
   button: {
-    backgroundColor: "#28a745", // Green primary color from dashboard theme
+    backgroundColor: "#28a745", 
     color: "white",
     padding: "12px 25px",
     fontSize: "18px",
     borderRadius: "8px",
     boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
     transition: "background-color 0.3s ease",
-    marginTop: "20px", // Space above the button
+    marginTop: "20px", 
     "&:hover": {
-      backgroundColor: "#218838", // Darker green on hover
+      backgroundColor: "#218838", 
     },
   },
 };
@@ -128,9 +125,7 @@ const Login = () => {
   };
 
   return (
-    // Outer container for centering and background
     <Container style={loginStyles.container} disableGutters maxWidth={false}>
-      {/* Inner container for the white login box */}
       <div style={loginStyles.loginBox}>
         <Typography variant="h4" style={loginStyles.heading}>Login</Typography>
         <TextField
@@ -139,7 +134,7 @@ const Login = () => {
           margin="normal"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
-          sx={loginStyles.textField} // Apply styles using MUI's sx prop
+          sx={loginStyles.textField} 
         />
         <TextField
           label="Password"
@@ -148,14 +143,14 @@ const Login = () => {
           margin="normal"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          sx={loginStyles.textField} // Apply styles using MUI's sx prop
+          sx={loginStyles.textField} 
         />
         <Button
           variant="contained"
-          color="primary" // Keep MUI color primary to use its theme if you have one
+          color="primary" 
           fullWidth
           onClick={handleLogin}
-          sx={loginStyles.button} // Apply styles using MUI's sx prop
+          sx={loginStyles.button} 
         >
           Login
         </Button>

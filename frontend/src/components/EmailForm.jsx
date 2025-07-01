@@ -1,4 +1,3 @@
-// EmailForm.jsx
 import React, { useState } from "react";
 import axios from "axios";
 
@@ -98,7 +97,7 @@ const styles = {
     fontSize: "16px",
     boxSizing: "border-box",
     backgroundColor: "#fff",
-    color: "#333", // ADDED: Set text color to a dark gray for readability
+    color: "#333", 
   },
   textarea: {
     width: "350px",
@@ -111,11 +110,11 @@ const styles = {
     resize: "vertical",
     boxSizing: "border-box",
     backgroundColor: "#fff",
-    color: "#333", // ADDED: Set text color to a dark gray for readability
+    color: "#333", 
   },
   button: {
     backgroundColor: "#28a745",
-    color: "white", // This is correct for button text
+    color: "white", 
     padding: "15px 25px",
     border: "none",
     borderRadius: "6px",

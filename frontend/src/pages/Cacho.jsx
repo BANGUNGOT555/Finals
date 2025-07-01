@@ -1,9 +1,8 @@
-// Cacho.jsx
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Container, Typography, Button } from "@mui/material";
 import EmailForm from "../components/EmailForm";
-import dashboardStyles from "../styles/dashboardStyles"; // <--- IMPORT THE SHARED STYLES HERE
+import dashboardStyles from "../styles/dashboardStyles"; 
 
 const Cacho = () => {
   const navigate = useNavigate();
@@ -27,13 +26,11 @@ const Cacho = () => {
   }, [navigate]);
 
   return (
-    // <--- APPLY STYLES TO THE CONTAINER AND DISABLE GUTTERS
     <Container style={dashboardStyles.container} disableGutters>
-      <Typography variant="h4" style={dashboardStyles.welcomeText}> {/* <--- APPLY WELCOME TEXT STYLE */}
-        Welcome {userRole} {user}
+      <Typography variant="h4" style={dashboardStyles.welcomeText}>
+        Welcome {user}
       </Typography>
 
-      {/* <--- WRAP EmailForm IN ITS STYLED CONTAINER */}
       <div style={dashboardStyles.emailFormContainer}>
         <EmailForm sender="cacho" />
       </div>
@@ -45,7 +42,7 @@ const Cacho = () => {
           localStorage.clear();
           navigate("/login");
         }}
-        style={dashboardStyles.logoutButton} // <--- APPLY LOGOUT BUTTON STYLE
+        style={dashboardStyles.logoutButton} 
       >
         Logout
       </Button>

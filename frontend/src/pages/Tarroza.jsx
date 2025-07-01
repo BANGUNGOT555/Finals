@@ -1,9 +1,8 @@
-// Tarroza.jsx
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Container, Typography, Button } from "@mui/material";
 import EmailForm from "../components/EmailForm";
-import dashboardStyles from "../styles/dashboardStyles"; // <--- IMPORT THE SHARED STYLES HERE
+import dashboardStyles from "../styles/dashboardStyles"; 
 
 const Tarroza = () => {
   const navigate = useNavigate();
@@ -19,7 +18,7 @@ const Tarroza = () => {
       setRole(storedRole);
 
       if (storedRole !== "Student5") {
-        navigate("/login"); // As per your original code for Tarroza
+        navigate("/login"); 
       }
     } else {
       navigate("/login");
@@ -27,15 +26,13 @@ const Tarroza = () => {
   }, [navigate]);
 
   return (
-    // <--- APPLY STYLES TO THE CONTAINER AND DISABLE GUTTERS
     <Container style={dashboardStyles.container} disableGutters>
-      <Typography variant="h4" style={dashboardStyles.welcomeText}> {/* <--- APPLY WELCOME TEXT STYLE */}
-        Welcome {userRole} {user}
+      <Typography variant="h4" style={dashboardStyles.welcomeText}> 
+        Welcome {user}
       </Typography>
 
-      {/* <--- WRAP EmailForm IN ITS STYLED CONTAINER */}
       <div style={dashboardStyles.emailFormContainer}>
-        <EmailForm sender="tarroza" /> {/* The sender prop is already correct */}
+        <EmailForm sender="tarroza" /> 
       </div>
 
       <Button
@@ -45,7 +42,7 @@ const Tarroza = () => {
           localStorage.clear();
           navigate("/login");
         }}
-        style={dashboardStyles.logoutButton} // <--- APPLY LOGOUT BUTTON STYLE
+        style={dashboardStyles.logoutButton} 
       >
         Logout
       </Button>

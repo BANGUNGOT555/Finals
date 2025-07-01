@@ -1,4 +1,3 @@
-// Balais.jsx
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Container, Typography, Button } from "@mui/material";
@@ -28,7 +27,6 @@ const Balais = () => {
 
   return (
     <Container style={dashboardStyles.container} disableGutters>
-      {/* The `welcomeText` might also need to stretch, apply its style */}
       <Typography variant="h4" style={dashboardStyles.welcomeText}>
         Welcome {user}
       </Typography>
